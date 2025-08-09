@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 
 # BU MIXSINGLI CRUDNI IMPORT QILISHI
 from .views import ListCreateApi,DetailUpdateDeleteApi
@@ -22,7 +22,10 @@ urlpatterns=[
     # BU MIXSINGLI CRUDNI URLSI
     path('',ListCreateApi.as_view(),name='list'),
     path('i/<int:pk>/',DetailUpdateDeleteApi.as_view(),name='detail'),
+    # path('api/auth/register/',include('dj_rest_auth.registration.urls')),
 
+
+    # path('api/auth/',include('dj_rest_auth.urls'))
 
     #  BU GENERIC API NING URLSII
     # path('',ListCreateApiw.as_view(),name='list'),
